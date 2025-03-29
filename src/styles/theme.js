@@ -1,19 +1,19 @@
 export const lightTheme = {
-    body: '#F1F4E8',      // Light olive background
-    text: '#3C4033',      // Dark olive text
-    primary: '#6B7452',   // Muted olive green (base)
-    secondary: '#8A916D', // Lighter muted olive
-    cardBg: '#E8EBDC',    // Very light olive
-    accent: '#4A5233',    // Darker olive for accents
-    shadow: 'rgba(60, 64, 51, 0.15)', // Subtle olive shadow
-  };
-  
-  export const darkTheme = {
-    body: '#3C4033',      // Dark olive background
-    text: '#F1F4E8',      // Light olive text
-    primary: '#8A916D',   // Lighter muted olive
-    secondary: '#6B7452', // Muted olive green
-    cardBg: '#4A5233',    // Darker olive
-    accent: '#A8B088',    // Lighter accent olive
-    shadow: 'rgba(241, 244, 232, 0.15)', // Subtle light olive shadow
-  };
+    body: '#FFF8DC',     // Cornsilk background
+    text: '#5D4037',     // Brownish text
+    primary: '#FF7043',  // Warm orange
+    secondary: '#8BC34A', // Fresh green
+    cardBg: '#FFE0B2',   // Peach card background
+    accent: '#FF5722',   // Deep orange accent
+    shadow: 'rgba(0, 0, 0, 0.08)', // Soft shadow
+};
+
+export const darkTheme = {
+    body: '#212121',     // Deep charcoal background
+    text: '#F5F5F5',     // Off-white text
+    primary: '#FF9800',  // Sunset orange
+    secondary: '#03A9F4', // Sky blue
+    cardBg: '#424242',   // Dark gray for cards
+    accent: '#FFC107',   // Golden accent
+    shadow: 'rgba(255, 255, 255, 0.1)', // Subtle light shadow
+};

@@ -3,7 +3,7 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 
 const Nav = styled.nav`
   display: flex;
-  justify-content: space-between from-xAI
+  justify-content: space-between;
   align-items: center;
   padding: 1.5rem 3rem;
   position: sticky;
@@ -15,9 +15,7 @@ const Nav = styled.nav`
   z-index: 1000;
 
   @media (max-width: 768px) {
-    padding: 1rem;
-    flex-direction: column;
-    gap: 1rem;
+    padding: 1rem 1.5rem;
   }
 `;
 
@@ -27,10 +25,6 @@ const Logo = styled.h1`
   color: ${({ theme }) => theme.primary};
   font-weight: 800;
   letter-spacing: -1px;
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
 `;
 
 const NavLinks = styled.div`
@@ -39,9 +33,7 @@ const NavLinks = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 `;
 
@@ -50,14 +42,24 @@ const Link = styled.a`
   color: ${({ theme }) => theme.text};
   font-weight: 600;
   font-size: 1.1rem;
+  position: relative;
   transition: color 0.3s ease;
-
   &:hover {
     color: ${({ theme }) => theme.accent};
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -8px;
+      left: 0;
+      background-color: ${({ theme }) => theme.accent};
+      animation: underline 0.3s ease forwards;
+    }
   }
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
+  @keyframes underline {
+    from { width: 0; }
+    to { width: 100%; }
   }
 `;
 
@@ -68,14 +70,9 @@ const ThemeButton = styled.button`
   font-size: 1.8rem;
   color: ${({ theme }) => theme.text};
   transition: transform 0.3s ease, color 0.3s ease;
-
   &:hover {
     transform: rotate(20deg);
     color: ${({ theme }) => theme.accent};
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
   }
 `;
 
@@ -83,7 +80,7 @@ function Header({ toggleTheme, theme }) {
   return (
     <Nav>
       <Logo>Navyendhu Menon</Logo>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
         <NavLinks>
           <Link href="#home">Home</Link>
           <Link href="#technologies">Technologies</Link>

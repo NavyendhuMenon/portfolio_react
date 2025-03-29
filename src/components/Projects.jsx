@@ -1,21 +1,49 @@
 import styled from 'styled-components';
+import images from '../assets/alien.jpg';
 
-const ProjectsSection = styled.section`
-  padding: 5rem 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: ${({ theme }) => theme.body};
+const ProjectContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 3rem;
+  width: calc(100% - 250px);
+  margin-left: 200px;
+  margin-top :50px;
+  border-radius: 15px;
+  background: ${({ theme }) => theme.cardBg};
+  box-shadow: 20px 20px 20px 20px 25px ${({ theme }) => theme.shadow};
+  color: ${({ theme }) => theme.text};
 
   @media (max-width: 768px) {
-    padding: 3rem 1rem;
+    width: 100%;
+    margin-left: 0;
+    padding: 2rem 1rem;
+  }
+`;
+
+const ProjectImage = styled.img`
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+`;
+
+const ProjectsSection = styled.section`
+  padding: 4rem 3rem;
+  width: 100%;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
   }
 `;
 
 const Title = styled.h2`
-  text-align: center;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: ${({ theme }) => theme.primary};
-  margin-bottom: 3rem;
+  text-align: left;
+  margin-bottom: 10px;
 
   @media (max-width: 768px) {
     font-size: 2rem;
@@ -24,10 +52,11 @@ const Title = styled.h2`
 
 const ProjectGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -38,9 +67,13 @@ const ProjectCard = styled.div`
   border-radius: 15px;
   box-shadow: 0 5px 20px ${({ theme }) => theme.shadow};
   transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
   &:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px);
   }
 
   @media (max-width: 768px) {
@@ -52,6 +85,7 @@ const ProjectTitle = styled.h3`
   color: ${({ theme }) => theme.accent};
   font-size: 1.6rem;
   margin-bottom: 1rem;
+  margin-top :20px
 
   @media (max-width: 768px) {
     font-size: 1.4rem;
@@ -96,30 +130,43 @@ const Link = styled.a`
 
 function Projects() {
   return (
-    <ProjectsSection id="projects">
-      <Title>Projects</Title>
-      <ProjectGrid>
-        <ProjectCard>
-          <ProjectTitle>Real-time Chat App</ProjectTitle>
-          <ProjectDesc>Building a real-time chat app with instant messaging features.</ProjectDesc>
-          <TechStack>React, Socket.io, Node.js, Redux-Toolkit, MongoDB, JWT</TechStack>
-          <Link href="https://github.com/navyendhu" target="_blank">Source Code</Link>
-        </ProjectCard>
-        <ProjectCard>
-          <ProjectTitle>Eatables E-commerce</ProjectTitle>
-          <ProjectDesc>Fully functional e-commerce platform with admin features.</ProjectDesc>
-          <TechStack>MongoDB, Node.js, Express.js, EJS, JWT, AWS EC2, Razorpay</TechStack>
-          <Link href="https://github.com/navyendhu" target="_blank">Source Code</Link>
-          <Link href="https://eatables.shop" target="_blank">Live</Link>
-        </ProjectCard>
-        <ProjectCard>
-          <ProjectTitle>User Management System</ProjectTitle>
-          <ProjectDesc>Secure role-based system with efficient CRUD operations.</ProjectDesc>
-          <TechStack>React, Redux, Node.js, Express.js, MongoDB, Tailwind CSS</TechStack>
-          <Link href="https://github.com/navyendhu" target="_blank">Source Code</Link>
-        </ProjectCard>
-      </ProjectGrid>
-    </ProjectsSection>
+    <ProjectContainer>
+      <ProjectsSection id="projects">
+        <Title>Projects</Title>
+        <ProjectGrid>
+          <ProjectCard>
+            <ProjectImage src={images} alt="Chat App" />
+            <ProjectTitle>Real-time Chat App</ProjectTitle>
+            <ProjectDesc>Building a real-time chat app with instant messaging features.</ProjectDesc>
+            <TechStack>React, Socket.io, Node.js, Redux-Toolkit, MongoDB, JWT</TechStack>
+            <Link href="https://github.com/navyendhu" target="_blank">Source Code</Link>
+          </ProjectCard>
+          <ProjectCard>
+            <ProjectImage src={images} alt="Chat App" />
+            <ProjectTitle>Eatables E-commerce</ProjectTitle>
+            <ProjectDesc>Fully functional e-commerce platform with admin features.</ProjectDesc>
+            <TechStack>MongoDB, Node.js, Express.js, EJS, JWT, AWS EC2, Razorpay</TechStack>
+            <Link href="https://github.com/navyendhu" target="_blank">Source Code</Link>
+            <Link href="https://eatables.shop" target="_blank">Live</Link>
+          </ProjectCard>
+          <ProjectCard>
+            <ProjectImage src={images} alt="Chat App" />
+            <ProjectTitle>Eatables E-commerce</ProjectTitle>
+            <ProjectDesc>Fully functional e-commerce platform with admin features.</ProjectDesc>
+            <TechStack>MongoDB, Node.js, Express.js, EJS, JWT, AWS EC2, Razorpay</TechStack>
+            <Link href="https://github.com/navyendhu" target="_blank">Source Code</Link>
+            <Link href="https://eatables.shop" target="_blank">Live</Link>
+          </ProjectCard>
+          <ProjectCard>
+            <ProjectImage src={images} alt="Chat App" />
+            <ProjectTitle>User Management System</ProjectTitle>
+            <ProjectDesc>Secure role-based system with efficient CRUD operations.</ProjectDesc>
+            <TechStack>React, Redux, Node.js, Express.js, MongoDB, Tailwind CSS</TechStack>
+            <Link href="https://github.com/navyendhu" target="_blank">Source Code</Link>
+          </ProjectCard>
+        </ProjectGrid>
+      </ProjectsSection>
+    </ProjectContainer>
   );
 }
 
