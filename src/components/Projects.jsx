@@ -42,8 +42,8 @@ const ProjectsSection = styled.section`
 const Title = styled.h2`
   font-size: 2.5rem;
   color: ${({ theme }) => theme.primary};
-  text-align: left;
-  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 30px;
 
   @media (max-width: 768px) {
     font-size: 2rem;

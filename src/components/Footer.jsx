@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 const FooterSection = styled.footer`
+
   padding: 3rem;
+  margin-top : 100px;
   text-align: center;
   border-top: 1px solid ${({ theme }) => theme.secondary};
   background: ${({ theme }) => theme.body};

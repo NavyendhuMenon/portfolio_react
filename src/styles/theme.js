@@ -17,3 +17,4 @@ export const darkTheme = {
     accent: '#FFC107',   // Golden accent
     shadow: 'rgba(255, 255, 255, 0.1)', // Subtle light shadow
 };
+

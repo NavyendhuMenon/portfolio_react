@@ -4,11 +4,12 @@ import { lightTheme, darkTheme } from './styles/theme';
 import { GlobalStyles } from './styles/GlobalStyles';
 import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
-import Technologies from './components/Technologies';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import styled from 'styled-components';
+import Achievement from './components/Achievements';
+
 
 const AppContainer = styled.div`
   display: flex;
@@ -55,6 +56,7 @@ function App() {
           <Hero />
           {/* <Technologies /> */}
           <Projects />
+          <Achievement/>
           <Contact />
           <Footer />
         </MainContent>
