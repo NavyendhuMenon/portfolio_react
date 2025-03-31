@@ -1,11 +1,22 @@
 import styled from 'styled-components';
+import { FaEnvelope, FaPhone, FaLinkedin } from 'react-icons/fa';
 
-const ContactSection = styled.section`
+const ContactContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 4rem 3rem;
-  width: 100%; // Ensure it takes full width
-  max-width: none; // Remove max-width constraint
+  width: calc(100% - 250px);
+  margin-left: 200px;
+  margin-top: 50px;
+  border-radius: 15px;
+  background: ${({ theme }) => theme.cardBg};
+  box-shadow: 0 5px 20px ${({ theme }) => theme.shadow};
+  color: ${({ theme }) => theme.text};
 
   @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
     padding: 2rem 1rem;
   }
 `;
@@ -13,48 +24,93 @@ const ContactSection = styled.section`
 const Title = styled.h2`
   font-size: 2.5rem;
   color: ${({ theme }) => theme.primary};
-  margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
 
   @media (max-width: 768px) {
     font-size: 2rem;
   }
 `;
 
-const ContactInfo = styled.div`
+const ContactDetails = styled.div`
+  text-align: center;
   margin-bottom: 2rem;
-`;
 
-const InfoText = styled.p`
-  color: ${({ theme }) => theme.text};
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
+  p {
+    font-size: 1.2rem;
+    color: ${({ theme }) => theme.text};
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
   }
 `;
 
-const Link = styled.a`
-  color: ${({ theme }) => theme.accent};
-  text-decoration: none;
+const ContactForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 800px;
+  background: ${({ theme }) => theme.cardBg};
+  padding: 4rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px ${({ theme }) => theme.shadow};
 
-  &:hover {
-    text-decoration: underline;
+  input,
+  textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid ${({ theme }) => theme.shadow};
+    font-size: 1.2rem;
   }
+
+  button {
+    background: ${({ theme }) => theme.primary};
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: ${({ theme }) => theme.accent};
+    }
+  }
+`;
+
+const ContactInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 `;
 
 function Contact() {
   return (
-    <ContactSection id="contact">
-      <Title>Contact Me</Title>
+    <ContactContainer>
+      <Title>Contact Us</Title>
       <ContactInfo>
-        <InfoText>Email: <Link href="mailto:navyendhummenon@gmail.com">navyendhummenon@gmail.com</Link></InfoText>
-        <InfoText>Phone: <Link href="tel:+918921466823">(+91) 892-146-6823</Link></InfoText>
-        <InfoText>LinkedIn: <Link href="https://linkedin.com/in/navyendhu" target="_blank">linkedin.com/in/navyendhu</Link></InfoText>
-        <InfoText>GitHub: <Link href="https://github.com/navyendhu" target="_blank">github.com/navyendhu</Link></InfoText>
+        <p><FaEnvelope /> navyendhummenon@gmail.com</p>
+        <p><FaPhone /> +91 8921466823</p>
+        <p><FaLinkedin /> <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">Navyendhu Menon</a></p>
       </ContactInfo>
-    </ContactSection>
+      <ContactForm>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </ContactForm>
+    </ContactContainer>
   );
 }
 
 export default Contact;
+
+
