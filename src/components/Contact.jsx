@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 import { FaEnvelope, FaPhone, FaLinkedin } from 'react-icons/fa';
 
-const GlobalTextStyle = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  color: ${({ theme }) => theme.text};
-`;
-
 const ContactContainer = styled.section`
   display: flex;
   flex-direction: column;
@@ -17,7 +11,7 @@ const ContactContainer = styled.section`
   margin-left: 200px;
   border-radius: 15px;
   background: ${({ theme }) => theme.cardBg};
-  box-shadow: 20px 20px 20px 20px 25px ${({ theme }) => theme.shadow};
+  box-shadow: 0 5px 20px ${({ theme }) => theme.shadow};
   color: ${({ theme }) => theme.text};
 
   @media (max-width: 1024px) {
@@ -30,54 +24,58 @@ const ContactContainer = styled.section`
   }
 `;
 
-const ContentWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 2rem;
-
-  @media (max-width: 1400px) {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-`;
-
-const Title = styled(GlobalTextStyle).attrs({ as: 'h2' })`
+const Title = styled.h2`
   font-size: 2.5rem;
   color: ${({ theme }) => theme.primary};
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 
   @media (max-width: 768px) {
     font-size: 2rem;
   }
+`;
 
-  @media (max-width: 480px) {
-    font-size: 1.8rem;
+const ContactCards = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
-const ContactInfo = styled.div`
+const ContactCard = styled.div`
+  background: ${({ theme }) => theme.cardBg};
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px ${({ theme }) => theme.shadow};
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  flex: 1;
+  min-width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  justify-content: center;
+  transition: all 0.3s ease;
+  word-break: break-word;
+  white-space: normal;
 
-  p {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0;
-    flex-direction: column;
-    text-align: center;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px ${({ theme }) => theme.shadow};
   }
 
-  a {
+  a, span {
     color: ${({ theme }) => theme.accent};
     text-decoration: none;
     transition: color 0.3s ease;
+    text-align: center;
+    display: block;
 
     &:hover {
       color: ${({ theme }) => theme.primary};
@@ -85,6 +83,11 @@ const ContactInfo = styled.div`
   }
 `;
 
+
+const IconWrapper = styled.div`
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+`;
 
 const ContactForm = styled.form`
   display: flex;
@@ -95,6 +98,7 @@ const ContactForm = styled.form`
   padding: 4rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px ${({ theme }) => theme.shadow};
+  margin-top: 30px;
 
   input,
   textarea {
@@ -126,24 +130,26 @@ const ContactForm = styled.form`
 function Contact() {
   return (
     <ContactContainer>
-      <Title>Contact Us</Title>
-      <ContactInfo>
-        <p>
-          <FaEnvelope /> navyendhummenon@gmail.com
-        </p>
-        <p>
-          <FaPhone /> +91 8921466823
-        </p>
-        <p>
-          <FaLinkedin />
+      <Title>Contact Me</Title>
+      <ContactCards>
+        <ContactCard>
+          <IconWrapper><FaEnvelope /></IconWrapper>
+          <span>navyendhummenon@gmail.com</span>
+        </ContactCard>
+        <ContactCard>
+          <IconWrapper><FaPhone /></IconWrapper>
+          <span>+91 8921466823</span>
+        </ContactCard>
+        <ContactCard>
+          <IconWrapper><FaLinkedin /></IconWrapper>
           <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
             Navyendhu Menon
           </a>
-        </p>
-      </ContactInfo>
+        </ContactCard>
+      </ContactCards>
       <ContactForm>
-        <textarea type="text" placeholder="Your Name" required />
-        <textarea type="email" placeholder="Your Email" required />
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
         <textarea rows="6" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </ContactForm>

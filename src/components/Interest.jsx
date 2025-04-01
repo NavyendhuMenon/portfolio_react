@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { FaTrophy, FaChalkboardTeacher, FaCogs } from 'react-icons/fa';
+import { FaCode, FaCameraRetro } from 'react-icons/fa';
 
-const AchievementContainer = styled.section`
+const InterestContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -33,7 +33,7 @@ const Title = styled.h2`
   }
 `;
 
-const AchievementList = styled.div`
+const InterestList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -53,7 +53,7 @@ const Row = styled.div`
   }
 `;
 
-const AchievementItem = styled.div`
+const InterestItem = styled.div`
   font-size: 1.2rem;
   color: ${({ theme }) => theme.text};
   background: ${({ theme }) => theme.cardBg};
@@ -64,7 +64,7 @@ const AchievementItem = styled.div`
   font-weight: 500;
   flex: 1;
   min-width: 280px;
-  max-width: 32%;
+  max-width: 48%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,7 +85,7 @@ const AchievementItem = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: ${({ theme }) => theme.accent}33; /* Light accent overlay */
+    background: ${({ theme }) => theme.accent}33;
     opacity: 0.2;
   }
 
@@ -95,34 +95,38 @@ const AchievementItem = styled.div`
   }
 `;
 
-
 const IconWrapper = styled.div`
   font-size: 2.5rem;
-  margin-bottom: 10px; /* Space between icon and text */
+  margin-bottom: 10px;
 `;
 
-function Achievement() {
+const InterestHeading = styled.h3`
+  font-size: 1.5rem;
+  margin-top: 15px;
+  color: ${({ theme }) => theme.primary};
+`;
+
+function Interest() {
   return (
-    <AchievementContainer>
-      <Title>Achievements</Title>
-      <AchievementList>
+    <InterestContainer>
+      <Title>My Interests</Title>
+      <InterestList>
         <Row>
-          <AchievementItem>
-            <IconWrapper><FaCogs /></IconWrapper>
-            <span>Mastered problem-solving with 330+ LeetCode challenges, earning milestone badges for 50, 100, and 200 days of consistent coding.</span>
-          </AchievementItem>
-          <AchievementItem>
-            <IconWrapper><FaTrophy /></IconWrapper>
-            <span>Led as Event Chairman for Mercatura, a prestigious inter-college management fest, successfully coordinating and executing key events.</span>
-          </AchievementItem>
-          <AchievementItem>
-            <IconWrapper><FaChalkboardTeacher /></IconWrapper>
-            <span>Trained 100+ students to improve their English communication skills and boost their confidence in presentations and public speaking.</span>
-          </AchievementItem>
+          <InterestItem>
+            <IconWrapper><FaCode /></IconWrapper>
+            <InterestHeading>Web Development</InterestHeading>
+            <span>Passionate about building interactive and scalable web applications.</span>
+          </InterestItem>
+          <InterestItem>
+            <IconWrapper><FaCameraRetro /></IconWrapper>
+            <InterestHeading>Photography</InterestHeading>
+            <span>Capturing moments and exploring creative photography techniques.</span>
+          </InterestItem>
         </Row>
-      </AchievementList>
-    </AchievementContainer>
+      </InterestList>
+    </InterestContainer>
   );
 }
 
-export default Achievement;
+export default Interest;
+

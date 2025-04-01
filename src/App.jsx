@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import styled from 'styled-components';
 import Achievement from './components/Achievements';
+import Interest from './components/Interest';
 
 
 const AppContainer = styled.div`
@@ -55,6 +56,7 @@ function App() {
         <MainContent>
           <Hero />
           {/* <Technologies /> */}
+          <Interest/>
           <Projects />
           <Achievement/>
           <Contact />

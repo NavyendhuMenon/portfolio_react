@@ -71,15 +71,30 @@ const ProjectCard = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 
   &:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 30px ${({ theme }) => theme.shadow};
+  }
+
+  &:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: ${({ theme }) => theme.accent}33; /* Light accent overlay */
+    opacity: 0.2;
   }
 
   @media (max-width: 768px) {
     padding: 1.5rem;
   }
 `;
+
 
 const ProjectTitle = styled.h3`
   color: ${({ theme }) => theme.accent};

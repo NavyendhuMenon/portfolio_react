@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp  } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
 import {
@@ -25,7 +25,7 @@ import {
   SiFirebase,
 } from "react-icons/si";
 
-import dp from "../assets/portfolio_dp.jpg"
+import dp from "../assets/portfolio_dp.jpg";
 
 const HeroContainer = styled.section`
   display: flex;
@@ -91,7 +91,6 @@ const SocialLinks = styled.div`
     color: ${({ theme }) => theme.primary};
   }
 `;
-
 
 const AboutContent = styled.div`
   flex: 1;
@@ -218,9 +217,7 @@ function Hero() {
     <HeroContainer>
       <ContentWrapper>
         <AboutContent>
-          <Title>
-            About Me
-          </Title>
+          <Title>About Me</Title>
           <p>
             Hi, my name is Navyendhu Menon. Over the past year, I have been
             actively developing and implementing features using the MERN stack,
@@ -241,7 +238,8 @@ function Hero() {
             <strong>Languages:</strong> English, Hindi, Malayalam
           </p>
           <p>
-            <strong>Soft Skills:</strong> Communication, Flexibility, Leadership, Teamwork, Problem-Solving
+            <strong>Soft Skills:</strong> Communication, Flexibility,
+            Leadership, Teamwork, Problem-Solving
           </p>
           <SocialLinks>
             <a
@@ -265,8 +263,21 @@ function Hero() {
             >
               <SiLeetcode />
             </a>
+            <a
+              href="https://www.instagram.com/stories.by.navyendhu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://wa.me/+918921466823"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp />
+            </a>
           </SocialLinks>{" "}
-          
         </AboutContent>
         <ProfileImage src={dp} alt="Navyendhu Menon" />
       </ContentWrapper>
