@@ -1,0 +1,52 @@
+{
+  "hash": "646de2f3",
+  "configHash": "cefaf742",
+  "lockfileHash": "1d6b8fcb",
+  "browserHash": "fbf73550",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "2d5cf02b",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "45ef0ae3",
+      "needsInterop": true
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "06c3700e",
+      "needsInterop": false
+    },
+    "react-icons/si": {
+      "src": "../../node_modules/react-icons/si/index.mjs",
+      "file": "react-icons_si.js",
+      "fileHash": "7ee6478f",
+      "needsInterop": false
+    },
+    "react-slick": {
+      "src": "../../node_modules/react-slick/lib/index.js",
+      "file": "react-slick.js",
+      "fileHash": "a100e2b6",
+      "needsInterop": true
+    },
+    "styled-components": {
+      "src": "../../node_modules/styled-components/dist/styled-components.browser.esm.js",
+      "file": "styled-components.js",
+      "fileHash": "d299fa82",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-NWBAVC7C": {
+      "file": "chunk-NWBAVC7C.js"
+    },
+    "chunk-BDDZIO7C": {
+      "file": "chunk-BDDZIO7C.js"
+    }
+  }
+}
