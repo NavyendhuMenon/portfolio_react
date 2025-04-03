@@ -1,5 +1,8 @@
-import styled from 'styled-components';
-import images from '../assets/alien.jpg';
+import styled from "styled-components";
+import eatables from "../assets/eatablesCoverPhoto.jpg";
+import netflix from "../assets/Netflix_Home.jpg";
+import chatApp from "../assets/chatApp.jpg";
+import Ums from "../assets/MERN_AUTH_PROFILE.jpg";
 
 const ProjectContainer = styled.section`
   display: flex;
@@ -8,7 +11,7 @@ const ProjectContainer = styled.section`
   padding: 4rem 3rem;
   width: calc(100% - 250px);
   margin-left: 200px;
-  margin-top :50px;
+  margin-top: 50px;
   border-radius: 15px;
   background: ${({ theme }) => theme.cardBg};
   box-shadow: 20px 20px 20px 20px 25px ${({ theme }) => theme.shadow};
@@ -33,7 +36,7 @@ const ProjectImage = styled.img`
 const ProjectsSection = styled.section`
   padding: 4rem 3rem;
   width: 100%;
-  
+
   @media (max-width: 768px) {
     padding: 2rem 1rem;
   }
@@ -86,7 +89,7 @@ const ProjectCard = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: ${({ theme }) => theme.accent}33; /* Light accent overlay */
+    background: ${({ theme }) => theme.accent}33;
     opacity: 0.2;
   }
 
@@ -95,12 +98,11 @@ const ProjectCard = styled.div`
   }
 `;
 
-
 const ProjectTitle = styled.h3`
   color: ${({ theme }) => theme.accent};
   font-size: 1.6rem;
   margin-bottom: 1rem;
-  margin-top :20px
+  margin-top: 20px;
 
   @media (max-width: 768px) {
     font-size: 1.4rem;
@@ -150,34 +152,33 @@ function Projects() {
         <Title>Projects</Title>
         <ProjectGrid>
           <ProjectCard>
-            <ProjectImage src={images} alt="Chat App" />
-            <ProjectTitle>Real-time Chat App</ProjectTitle>
+            <ProjectImage src={chatApp} alt="Chat App" />
+            <ProjectTitle>Real-time ChatApp (In progress)</ProjectTitle>
             <ProjectDesc>Building a real-time chat app with instant messaging features.</ProjectDesc>
             <TechStack>React, Socket.io, Node.js, Redux-Toolkit, MongoDB, JWT</TechStack>
-            <Link href="https://github.com/navyendhu" target="_blank">Source Code</Link>
+            <Link href="https://github.com/NavyendhuMenon/Chat_App" target="_blank" rel="noopener noreferrer">Source Code</Link>
           </ProjectCard>
           <ProjectCard>
-            <ProjectImage src={images} alt="Chat App" />
+            <ProjectImage src={netflix} alt="Netflix Clone" />
+            <ProjectTitle>Netflix-Clone</ProjectTitle>
+            <ProjectDesc>A Netflix clone built with React and Firebase, featuring movie browsing, watchlists, and admin controls.</ProjectDesc>
+            <TechStack>React, Firebase, Custom APIs, CSS</TechStack>
+            <Link href="https://github.com/NavyendhuMenon/Netflix_Clone_React.js" target="_blank" rel="noopener noreferrer">Source Code</Link>
+          </ProjectCard>
+          <ProjectCard>
+            <ProjectImage src={eatables} alt="eatables" />
             <ProjectTitle>Eatables E-commerce</ProjectTitle>
             <ProjectDesc>Fully functional e-commerce platform with admin features.</ProjectDesc>
             <TechStack>MongoDB, Node.js, Express.js, EJS, JWT, AWS EC2, Razorpay</TechStack>
-            <Link href="https://github.com/navyendhu" target="_blank">Source Code</Link>
-            <Link href="https://eatables.shop" target="_blank">Live</Link>
+            <Link href="https://github.com/NavyendhuMenon/my-eatables" target="_blank" rel="noopener noreferrer">Source Code</Link>
+            <Link href="https://eatables.shop" target="_blank" rel="noopener noreferrer">Live</Link>
           </ProjectCard>
           <ProjectCard>
-            <ProjectImage src={images} alt="Chat App" />
-            <ProjectTitle>Eatables E-commerce</ProjectTitle>
-            <ProjectDesc>Fully functional e-commerce platform with admin features.</ProjectDesc>
-            <TechStack>MongoDB, Node.js, Express.js, EJS, JWT, AWS EC2, Razorpay</TechStack>
-            <Link href="https://github.com/navyendhu" target="_blank">Source Code</Link>
-            <Link href="https://eatables.shop" target="_blank">Live</Link>
-          </ProjectCard>
-          <ProjectCard>
-            <ProjectImage src={images} alt="Chat App" />
+            <ProjectImage src={Ums} alt="UMS" />
             <ProjectTitle>User Management System</ProjectTitle>
             <ProjectDesc>Secure role-based system with efficient CRUD operations.</ProjectDesc>
             <TechStack>React, Redux, Node.js, Express.js, MongoDB, Tailwind CSS</TechStack>
-            <Link href="https://github.com/navyendhu" target="_blank">Source Code</Link>
+            <Link href="https://github.com/NavyendhuMenon/User-Management-System---Express.js" target="_blank" rel="noopener noreferrer">Source Code</Link>
           </ProjectCard>
         </ProjectGrid>
       </ProjectsSection>
