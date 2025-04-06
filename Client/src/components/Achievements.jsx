@@ -46,6 +46,8 @@ const Row = styled.div`
   flex-wrap: wrap;
   width: 100%;
   gap: 20px;
+  font-family: "IBM Plex Mono", monospace;
+
 
   @media (max-width: 768px) {
     flex-direction: column;

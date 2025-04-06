@@ -63,6 +63,7 @@ const InterestItem = styled.div`
   text-align: center;
   font-weight: 500;
   flex: 1;
+  font-family: "IBM Plex Mono", monospace;
   min-width: 280px;
   max-width: 48%;
   display: flex;
