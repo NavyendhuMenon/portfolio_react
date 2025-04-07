@@ -158,29 +158,34 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log("On handle submit")
+  
     if (!formData.name || !formData.email || !formData.message) {
       setErrorMessage("All fields are required!");
       return;
     }
-
+  
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     if (!emailRegex.test(formData.email)) {
       setErrorMessage("Invalid email format!");
       return;
     }
-
+  
     setErrorMessage("");
+  
+   console.log("VALIDATION DONE")
 
-    const startTime = Date.now(); // log the start time
-
+  
     try {
-      const response = await axios.post(
-        "http://localhost:4000/api/contact",
-        formData
-      );
 
-      console.log(`Server response time: ${Date.now() - startTime} ms`); // log the time it took to get the response
+      console.log("inside try")
 
+      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
+      console.log("BACKEND URL", BACKEND_URL);
+      const response = await axios.post(`${BACKEND_URL}/api/contact`, formData);
+  
+            
       setSuccessMessage(response.data.message);
       setTimeout(() => {
         setSuccessMessage("");
@@ -190,6 +195,7 @@ function Contact() {
       setErrorMessage("Failed to send message. Please try again later.");
     }
   };
+  
 
   return (
     <ContactContainer>
@@ -212,7 +218,7 @@ function Contact() {
             <FaLinkedin />
           </IconWrapper>
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/navyendhu-menon-0074231b2/"
             target="_blank"
             rel="noopener noreferrer"
           >

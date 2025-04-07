@@ -6,9 +6,12 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 
+console.log("Frontend URL:", process.env.FRONTEND_URL);
+
+
 // Configure CORS
 const corsOptions = {
-  origin: "http://localhost:5173", // Replace with your frontend URL
+  origin: `${process.env.FRONTEND_URL}`, 
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 };
@@ -17,6 +20,8 @@ app.use(cors(corsOptions));
 // Contact API route
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
+
+  console.log("reqbody", req.body)
 
   // Validate input
   if (!name || !email || !message) {
